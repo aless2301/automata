@@ -16,7 +16,7 @@ defmodule AutomataTest do
 
   test "abb accepted" do
     dfa = Automata.nfa() |> Automata.determinize()
-    # Simulamos: {0} -a-> {0,1} -b-> {0,2} -b-> {0,3} -b-> {0,3}
+    # Simulamos: {0} -a-> {0,1} -b-> {0,2} -b-> {0,3}
     s0 = Map.get(dfa.transitions, {MapSet.new([0]),       :a})
     s1 = Map.get(dfa.transitions, {s0,                    :b})
     s2 = Map.get(dfa.transitions, {s1,                    :b})
